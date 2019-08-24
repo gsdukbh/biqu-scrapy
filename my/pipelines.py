@@ -68,8 +68,8 @@ class MySqlPipeline(object):
     def process_item(self, item, spider):
         if spider.name == 'biqu':
             if item['mark'] == 1:
-                insert_sql = "INSERT INTO novel_list " \
-                             "( novel_id, " \
+                insert_sql = "INSERT INTO novel_list(" \
+                             "novel_id, " \
                              "novel_name, " \
                              "novel_author, " \
                              "novel_type, " \
@@ -97,20 +97,24 @@ class MySqlPipeline(object):
             else:
                 chapter = item['chapter']
                 insert_sql_chapter ="INSERT INTO novel_chapter (" \
-                                    " novel_id, " \
+                                    "chapter_id," \
+                                    "novel_id, " \
                                     "chapter_title, " \
                                     "chapter_url, " \
                                     "chapter_content)" \
-                                    "VALUES('%s','%s','%s','%s')" % \
+                                    "VALUES('%s','%s','%s','%s','%s')" % \
                                     (
+                                        chapter['chapter_id'],
                                         chapter['novel_id'],
                                         chapter['chapter_title'],
                                         chapter['chapter_url'],
                                         chapter['chapter_content'],
                                     )
-
-                self.cursor.execute(insert_sql_chapter)
-                self.connection.commit()
+                try:
+                    self.cursor.execute(insert_sql_chapter)
+                    self.connection.commit()
+                except:
+                    self.connection.rollback()
 
 
 

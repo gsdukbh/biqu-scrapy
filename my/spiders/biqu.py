@@ -49,14 +49,14 @@ class BiquSpider(scrapy.Spider):
                 items['novel_source'] =response.url
                 yield items
 
-                for content in chapter_url:
-                    urls='{url}{chapter_url}'.format(url=self.paqu_urls,chapter_url=content)
+                for content in range(len(chapter_url)):
+                    urls = '{url}{chapter_url}'.format(url=self.paqu_urls, chapter_url=chapter_url[content])
+                    items['chapter_id']=content
                     yield scrapy.Request(url=urls,
                                          callback=self.parse_hapet,
                                          meta={'items':items})
 
                 next_url ='{url}/book/{num}'.format(url=self.paqu_urls, num=int(num[0])+1)
-
                 yield scrapy.Request(url=next_url)
             else:
                 scrapy.Request(url=response.url)
@@ -79,6 +79,7 @@ class BiquSpider(scrapy.Spider):
         items['mark'] = 0
         # 构造字典
         items['chapter'] ={
+            'chapter_id':items['chapter_id'],
             'novel_id':items['_id'],
             'chapter_title': chapter_title,
             'chapter_url': response.url,

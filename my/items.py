@@ -20,6 +20,7 @@ class MyItem(scrapy.Item):
     chapter = scrapy.Field()
     mark = scrapy.Field()
     novel_source =scrapy.Field()
+    chapter_id =scrapy.Field()
 
 
 
