@@ -39,7 +39,7 @@ DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
 REDIS_URL = 'redis://root:1361404576@127.0.0.1:6379'
 
 # Don't cleanup redis queues, allows to pause/resume crawls.
-#SCHEDULER_PERSIST = True
+SCHEDULER_PERSIST = True
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'my (+http://www.yourdomain.com)'
