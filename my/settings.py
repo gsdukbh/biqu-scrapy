@@ -15,7 +15,7 @@ SPIDER_MODULES = ['my.spiders']
 NEWSPIDER_MODULE = 'my.spiders'
 
 #MONGO_URL='mongodb://admin:li1361404576@192.168.0.105:27017/'
-MONGO_URL='mongodb://admin:li1361404576@127.0.0.1:27018/'
+MONGO_URL='mongodb://admin:li1361404576@127.0.0.1:27017/'
 MONGO_DB='biqu'
 
 
