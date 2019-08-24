@@ -19,14 +19,21 @@ MONGO_URL='mongodb://admin:li1361404576@127.0.0.1:27017/'
 MONGO_DB='biqu'
 
 
-# 启用日志
-LOG_ENABLED = True
-# 日志编码
-LOG_ENCODING ='utf-8'
-# 日志文件
-LOG_FILE ="./log.log"
-# 日志等级
-LOG_LEVEL ='WARNING'
+# # 启用日志
+# LOG_ENABLED = True
+# # 日志编码
+# LOG_ENCODING ='utf-8'
+# # 日志文件
+# LOG_FILE ="./log.log"
+# # 日志等级
+# LOG_LEVEL ='WARNING'
+
+# MySql 配置
+MYSQL_HOST = '192.168.0.105'
+MYSQL_DB = 'spider'
+MYSQL_PWD = 'cWhdhX4fs2XJiCam'
+MYSQL_USER = 'spider'
+
 
 # Enables scheduling storing requests queue in redis.
 SCHEDULER = "scrapy_redis.scheduler.Scheduler"
@@ -36,7 +43,8 @@ DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
 
 # Specify the full Redis URL for connecting (optional).
 # If set, this takes precedence over the REDIS_HOST and REDIS_PORT settings.
-REDIS_URL = 'redis://root:1361404576@127.0.0.1:6379'
+#REDIS_URL = 'redis://root:1361404576@127.0.0.1:6379'
+REDIS_URL = 'redis://root:1361404576@192.168.0.105:6379'
 
 # Don't cleanup redis queues, allows to pause/resume crawls.
 SCHEDULER_PERSIST = True
@@ -91,7 +99,8 @@ DEFAULT_REQUEST_HEADERS = {
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'my.pipelines.MongoPipeline': 300,
+   # 'my.pipelines.MongoPipeline': 300,
+    'my.pipelines.MySqlPipeline': 300,
     # 'scrapy_redis.pipelines.RedisPipeline': 301
 }
 

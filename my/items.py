@@ -19,6 +19,7 @@ class MyItem(scrapy.Item):
     UPtime = scrapy.Field()
     chapter = scrapy.Field()
     mark = scrapy.Field()
+    novel_source =scrapy.Field()
 
 
 

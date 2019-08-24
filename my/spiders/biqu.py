@@ -46,6 +46,7 @@ class BiquSpider(scrapy.Spider):
                 items['cover'] = self.paqu_urls+cover[0]
                 items['info'] = info
                 items['mark'] = 1
+                items['novel_source'] =response.url
                 yield items
 
                 for content in chapter_url:
@@ -78,7 +79,7 @@ class BiquSpider(scrapy.Spider):
         items['mark'] = 0
         # 构造字典
         items['chapter'] ={
-            'chapter_id' : items['_id'],
+            'novel_id':items['_id'],
             'chapter_title': chapter_title,
             'chapter_url': response.url,
             'chapter_content': chapter_content
