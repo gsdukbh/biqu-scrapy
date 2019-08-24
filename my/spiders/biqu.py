@@ -54,7 +54,8 @@ class BiquSpider(scrapy.Spider):
                                          callback=self.parse_hapet,
                                          meta={'items':items})
 
-                next_url ='{url}/book/{num}'.format(url=self.paqu_urls, num=num[0]+1)
+                next_url ='{url}/book/{num}'.format(url=self.paqu_urls, num=int(num[0])+1)
+
                 yield scrapy.Request(url=next_url)
             else:
                 scrapy.Request(url=response.url)
