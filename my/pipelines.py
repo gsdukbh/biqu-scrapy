@@ -116,9 +116,6 @@ class MySqlPipeline(object):
                 except:
                     self.connection.rollback()
 
-
-
-
     def close_spider(self, spider):
         self.connection.close()
 
