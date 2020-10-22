@@ -28,9 +28,9 @@ LOG_ENCODING = 'utf-8'
 LOG_LEVEL = 'INFO'
 
 # MySql 配置
-MYSQL_HOST = '192.168.0.105'
+MYSQL_HOST = '192.168.0.100'
 MYSQL_DB = 'spider'
-MYSQL_PWD = 'cWhdhX4fs2XJiCam'
+MYSQL_PWD = 'cWhdhX4fs2XJiCam888.&&&'
 MYSQL_USER = 'spider'
 
 # Enables scheduling storing requests queue in redis.
@@ -41,8 +41,8 @@ DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
 
 # Specify the full Redis URL for connecting (optional).
 # If set, this takes precedence over the REDIS_HOST and REDIS_PORT settings.
-REDIS_URL = 'redis://root@127.0.0.1:6379'
-# REDIS_URL = 'redis://root:1361404576@192.168.0.100:6379'
+# REDIS_URL = 'redis://root@127.0.0.1:6379'
+REDIS_URL = 'redis://root:1361404576@192.168.0.100:6379'
 
 # Don't cleanup redis queues, allows to pause/resume crawls.
 SCHEDULER_PERSIST = True
@@ -54,15 +54,15 @@ SCHEDULER_PERSIST = True
 ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-# CONCURRENT_REQUESTS = 32
+CONCURRENT_REQUESTS = 32
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://doc.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
 # DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
-# CONCURRENT_REQUESTS_PER_DOMAIN = 16
-# CONCURRENT_REQUESTS_PER_IP = 16
+CONCURRENT_REQUESTS_PER_DOMAIN = 16
+CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
 # COOKIES_ENABLED = False
