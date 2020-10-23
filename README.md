@@ -40,7 +40,7 @@ novel_id VARCHAR(50),
 chapter_title VARCHAR ( 50 ),
 chapter_url VARCHAR ( 200 ),
 chapter_content LONGTEXT,
-index chapterIndex (chapter_id desc)
+index chapterIndex (chapter_id desc,novel_id,chapter_title)
 )
 
 ```

@@ -23,12 +23,12 @@ LOG_ENABLED = True
 # # 日志编码
 LOG_ENCODING = 'utf-8'
 # # 日志文件
-# LOG_FILE ="./log.log"
+LOG_FILE = "./log.log"
 # # 日志等级
 LOG_LEVEL = 'INFO'
 
 # MySql 配置
-MYSQL_HOST = '192.168.0.100'
+MYSQL_HOST = '192.168.31.100'
 MYSQL_DB = 'spider'
 MYSQL_PWD = 'cWhdhX4fs2XJiCam888.&&&'
 MYSQL_USER = 'spider'
@@ -42,7 +42,7 @@ DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
 # Specify the full Redis URL for connecting (optional).
 # If set, this takes precedence over the REDIS_HOST and REDIS_PORT settings.
 # REDIS_URL = 'redis://root@127.0.0.1:6379'
-REDIS_URL = 'redis://root:1361404576@192.168.0.100:6379'
+REDIS_URL = 'redis://:1361404576@192.168.31.100:6379'
 
 # Don't cleanup redis queues, allows to pause/resume crawls.
 SCHEDULER_PERSIST = True
@@ -72,7 +72,7 @@ CONCURRENT_REQUESTS_PER_IP = 16
 
 # Override the default request headers:
 DEFAULT_REQUEST_HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36'
+    'User-Agent': ' Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36'
 }
 
 # Enable or disable spider middlewares
@@ -97,7 +97,7 @@ DEFAULT_REQUEST_HEADERS = {
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     # 'my.pipelines.MongoPipeline': 300,
-    'my.pipelines.MySqlPipeline': 300,
+    'my.pipelines.MySqlPipeline': 302,
     # 'scrapy_redis.pipelines.RedisPipeline': 301
 }
 
