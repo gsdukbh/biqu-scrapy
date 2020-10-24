@@ -16,10 +16,10 @@ class BiquSpider(scrapy.Spider):
     max_page = 100
     start_fiction = 1
 
-    def start_requests(self):
-        for page in range(1, self.max_page+1):
-            url = '{url}/book/{num}'.format(url=self.paqu_urls, num=page)
-            yield scrapy.Request(url=url)
+    # def start_requests(self):
+    #     for page in range(1, self.max_page+1):
+    #         url = '{url}/book/{num}'.format(url=self.paqu_urls, num=page)
+    #         yield scrapy.Request(url=url)
 
     def parse(self, response):
         """
