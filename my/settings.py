@@ -28,7 +28,8 @@ LOG_FILE = "./log.log"
 LOG_LEVEL = 'INFO'
 
 # MySql 配置
-MYSQL_HOST = '192.168.31.100'
+# MYSQL_HOST = '192.168.31.100'
+MYSQL_HOST = 'pi.werls.top'
 MYSQL_DB = 'spider'
 MYSQL_PWD = 'cWhdhX4fs2XJiCam888.&&&'
 MYSQL_USER = 'spider'
@@ -42,7 +43,7 @@ DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
 # Specify the full Redis URL for connecting (optional).
 # If set, this takes precedence over the REDIS_HOST and REDIS_PORT settings.
 # REDIS_URL = 'redis://root@127.0.0.1:6379'
-REDIS_URL = 'redis://:1361404576@192.168.31.100:6379'
+REDIS_URL = 'redis://:1361404576@pi.werls.top:6379'
 
 # Don't cleanup redis queues, allows to pause/resume crawls.
 SCHEDULER_PERSIST = True
