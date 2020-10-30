@@ -41,6 +41,7 @@ CREATE TABLE novel_chapter (
                                chapter_title VARCHAR ( 50 ),
                                chapter_url VARCHAR ( 200 ),
                                chapter_content longtext,
+                               foreign key (novel_id) references novel_list(novel_id),
                                index novel_chapter_chapter_id_index(chapter_id),
                                index novel_chapter_chapter_title_index(chapter_title),
                                index novel_chapter_novel_id_index(novel_id)
