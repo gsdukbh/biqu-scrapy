@@ -104,16 +104,25 @@ class MySqlPipeline(object):
                     "novel_id, " \
                     "chapter_title, " \
                     "chapter_url, " \
-                    "chapter_content)" \
+                    "chapter_content_id)" \
                     "VALUES('%s','%s','%s','%s','%s')" % \
                     (
                         chapter['chapter_id'],
                         chapter['novel_id'],
                         chapter['chapter_title'],
                         chapter['chapter_url'],
-                        chapter['chapter_content'],
+                       chapter['chapter_id']+'_'+chapter['novel_id'],
+                    )
+                insert_sql_chapter_content = "INSERT INTO novel_content("\
+                    "id," \
+                    "content)" \
+                    "VALUES('%s','%s')" % \
+                    (
+                        chapter['chapter_id']+'_'+chapter['novel_id'],
+                        chapter['chapter_content']
                     )
                 try:
+                    self.cursor.execute(insert_sql_chapter_content)
                     self.cursor.execute(insert_sql_chapter)
                     self.connection.commit()
                 except:
