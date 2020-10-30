@@ -111,14 +111,16 @@ class MySqlPipeline(object):
                         chapter['novel_id'],
                         chapter['chapter_title'],
                         chapter['chapter_url'],
-                       chapter['chapter_id']+'_'+chapter['novel_id'],
+                        str(chapter['chapter_id']) +
+                        "_" + str(chapter['novel_id']),
                     )
                 insert_sql_chapter_content = "INSERT INTO novel_content("\
                     "id," \
                     "content)" \
                     "VALUES('%s','%s')" % \
                     (
-                        chapter['chapter_id']+'_'+chapter['novel_id'],
+                        str(chapter['chapter_id']) +
+                        "_" + str(chapter['novel_id']),
                         chapter['chapter_content']
                     )
                 try:
